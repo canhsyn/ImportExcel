@@ -288,7 +288,7 @@
         }
 
         #Call export-excel with any parameters which don't relate to the SQL query
-        "Connection", "Database" , "Session", "MsSQLserver", "Destination" , "SQL" , "DataTable", "Path" | ForEach-Object {$null = $PSBoundParameters.Remove($_) }
+        "Connection", "Database" , "Session", "MsSQLserver", "Destination" , "SQL" , "DataTable", "Path", "QueryTimeout" | ForEach-Object {$null = $PSBoundParameters.Remove($_) }
         Export-Excel -ExcelPackage $excelPackage   @PSBoundParameters
     }
     else {Write-Warning -Message "No Data to insert."}
